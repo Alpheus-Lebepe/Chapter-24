@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <title>Chapter 24 | Happy Birthday Tshepo</title>
   <link rel="stylesheet" href="CSS/style.css" />
 </head>
+
 <body>
   <div class="site-shell">
     <nav class="nav container" aria-label="Main navigation">
@@ -22,8 +24,11 @@
       <section class="hero container">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-line"></span> 17 · 10 · 2026</p>
-          <h1>Welcome to<br /><em>Chapter 24,</em><br />Tshepo.</h1>
-          <p class="hero-intro">A new year. A new page. Same legendary energy.</p>
+          <h1><span class="hero-title-small">HAPPY BIRTHDAY, LEGEND</span><br /><em class="hero-star">✦</em><br /><span
+              class="hero-age-copy">24 looks<br />good on you.</span></h1>
+          <p class="hero-intro">A new chapter. The same absolute legend.<br />Cheers to another trip around the sun! My
+            Brother From Another Mother.</p>
+          <p class="hero-subintro">Wishing you the biggest slice of happy today.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#letter">Read your note <span>↓</span></a>
             <button class="button button-ghost" id="celebrateBtn" type="button">Celebrate <span>✦</span></button>
@@ -32,7 +37,7 @@
         <div class="hero-art" aria-label="Decorative birthday artwork">
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
-          <div class="sun-disc"><span>24</span></div>
+          <div class="sun-disc age-badge"><span>24</span><small>LOOKS GOOD<br />ON YOU</small></div>
           <div class="spark spark-one">✦</div>
           <div class="spark spark-two">✧</div>
           <div class="spark spark-three">✦</div>
@@ -59,6 +64,17 @@
       </section>
 
 
+      <section class="origin-section container">
+        <div class="origin-rule"></div>
+        <div class="origin-grid">
+          <p class="origin-label">A GOOD STORY STARTED ON</p>
+          <div>
+            <h2>17 October 2002</h2>
+            <p class="origin-copy">Some legends arrive quietly. Yours arrived right on time.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="gallery-section container" id="memories">
         <div class="gallery-heading">
           <div>
@@ -69,22 +85,23 @@
         </div>
         <div class="gallery-grid">
           <figure class="photo-card">
-            
-            <img src="ASSETS/images/pastimg.jpg" alt="A favourite memory of Tshepo" onerror="this.style.display='none'" />
+            <div class="photo-placeholder">Add photo-1.jpg</div>
+            <img src="ASSETS/images/photo-1.jpg" alt="A favourite memory of Tshepo"
+              onerror="this.style.display='none'" />
             <figcaption class="photo-label"><span>MEMORY / 01</span><span>THE DAY ONES</span></figcaption>
           </figure>
           <figure class="photo-card">
-            
-            <img src="ASSETS/images/Smile.jpeg" alt="A favourite memory with Tshepo" onerror="this.style.display='none'" />
+            <div class="photo-placeholder">Add photo-2.jpg</div>
+            <img src="ASSETS/images/photo-2.jpg" alt="A favourite memory with Tshepo"
+              onerror="this.style.display='none'" />
             <figcaption class="photo-label"><span>MEMORY / 02</span><span>GOOD ENERGY</span></figcaption>
           </figure>
           <figure class="photo-card">
-            
-            <img src="ASSETS/images/Present.jpeg" alt="A birthday memory with Tshepo" onerror="this.style.display='none'" />
-            <figcaption class="photo-label"><span>MEMORY / 03</span><span>STILL LOADING</span></figcaption>
             <div class="photo-placeholder">Add photo-3.jpg</div>
+            <img src="ASSETS/images/photo-3.jpg" alt="A birthday memory with Tshepo"
+              onerror="this.style.display='none'" />
+            <figcaption class="photo-label"><span>MEMORY / 03</span><span>STILL LOADING</span></figcaption>
           </figure>
-          
         </div>
       </section>
 
@@ -94,7 +111,9 @@
           <div class="letter-content">
             <p class="eyebrow"><span class="eyebrow-line"></span> A little something</p>
             <h2>Keep becoming<br /><em>the man you’re meant to be.</em></h2>
-            <p class="letter-copy">Happy birthday, Tshepo. 24 looks good on you already. Here’s to bigger dreams, louder laughs, quiet wins, and every plot twist that makes this chapter yours. May this year meet you with everything you’ve been working towards.</p>
+            <p class="letter-copy">Happy birthday, Tshepo. 24 looks good on you already. Here’s to bigger dreams, louder
+              laughs, quiet wins, and every plot twist that makes this chapter yours. May this year meet you with
+              everything you’ve been working towards.</p>
             <p class="signature">— Sickzo <span>♥</span></p>
           </div>
           <div class="letter-stamp" aria-hidden="true">24<br /><small>YEARS<br />IN THE<br />MAKING</small></div>
@@ -102,10 +121,26 @@
       </section>
 
       <section class="finale container">
-        <p class="eyebrow centered"><span class="eyebrow-line"></span> Make a wish <span class="eyebrow-line"></span></p>
+        <p class="eyebrow centered"><span class="eyebrow-line"></span> Make a wish <span class="eyebrow-line"></span>
+        </p>
         <h2>Here’s to <em>you.</em></h2>
         <p>More life. More love. More unforgettable moments.</p>
-        <button class="button button-primary" id="wishBtn" type="button">Light it up <span>✦</span></button>
+        <button class="button button-primary" id="wishBtn" type="button" aria-expanded="false"
+          aria-controls="wishCard">Make a wish <span>✦</span></button>
+        <div class="wish-card" id="wishCard" aria-hidden="true">
+          <div class="wish-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A little birthday tradition</p>
+            <h3>Wish made.<br /><em>Chapter begins.</em></h3>
+            <p>Here’s hoping this year brings the thing you wished for — and a few beautiful surprises you didn’t.</p>
+          </div>
+          <div class="cake-wrap" aria-label="Birthday cake illustration" role="img">
+            <div class="cake-flame"></div>
+            <div class="cake-candle"></div>
+            <div class="cake-top"></div>
+            <div class="cake-body"><span></span><span></span><span></span></div>
+            <div class="cake-plate"></div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -118,4 +153,5 @@
   <div class="toast" id="toast" role="status" aria-live="polite">A little birthday magic, coming right up.</div>
   <script src="JS/script.js"></script>
 </body>
+
 </html>
