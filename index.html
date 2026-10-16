@@ -236,6 +236,60 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite">A little birthday magic, coming right up.</div>
   <script src="JS/script.js"></script>
+  <script>
+    const audio = document.getElementById('myAudio');
+    const soundControl = document.getElementById('soundControl');
+    const soundIcon = soundControl.querySelector('.sound-icon');
+    const muteIcon = soundControl.querySelector('.mute-icon');
+
+    audio.volume = 0.7;
+    audio.muted = false;
+
+    function updateSoundButton() {
+      const isMuted = audio.muted || audio.paused;
+
+      soundIcon.style.display = isMuted ? 'none' : 'block';
+      muteIcon.style.display = isMuted ? 'block' : 'none';
+
+      soundControl.setAttribute('aria-pressed', String(audio.muted));
+      soundControl.setAttribute(
+        'aria-label',
+        audio.muted ? 'Unmute birthday soundtrack' : 'Mute birthday soundtrack'
+      );
+    }
+
+    async function startAudio() {
+      try {
+        audio.muted = false;
+        await audio.play();
+        updateSoundButton();
+      } catch (error) {
+        console.log('Autoplay was blocked. Waiting for user interaction.');
+        updateSoundButton();
+      }
+    }
+
+    soundControl.addEventListener('click', async () => {
+      if (audio.paused) {
+        audio.muted = false;
+        await audio.play();
+      } else {
+        audio.muted = !audio.muted;
+      }
+
+      updateSoundButton();
+    });
+
+    // Try to start audio immediately.
+    startAudio();
+
+    // If autoplay is blocked, start audio after the visitor's first interaction.
+    document.addEventListener('click', startAudio, { once: true });
+    document.addEventListener('touchstart', startAudio, { once: true });
+
+    updateSoundButton();
+  </script>
+
 </body>
 
 </html>
