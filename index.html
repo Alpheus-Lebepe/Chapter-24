@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d12" />
+  <meta name="description" content="A birthday celebration for Tshepo Leshabane — Chapter 24." />
+  <title>Chapter 24 | Happy Birthday Tshepo</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Chapter 24 home">
+        <span class="brand-mark">24</span>
+        <span>CHAPTER<span class="brand-accent">24</span></span>
+      </a>
+      <a class="nav-link" href="#memories">Our memories <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> 17 · 10 · 2026</p>
+          <h1>Welcome to<br /><em>Chapter 24,</em><br />Tshepo.</h1>
+          <p class="hero-intro">A new year. A new page. Same legendary energy.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#letter">Read your note <span>↓</span></a>
+            <button class="button button-ghost" id="celebrateBtn" type="button">Celebrate <span>✦</span></button>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Decorative birthday artwork">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="sun-disc"><span>24</span></div>
+          <div class="spark spark-one">✦</div>
+          <div class="spark spark-two">✧</div>
+          <div class="spark spark-three">✦</div>
+          <p class="art-caption">THE NEXT<br /><strong>BIG THING</strong></p>
+        </div>
+      </section>
+
+      <section class="countdown-section">
+        <div class="container countdown-grid">
+          <div>
+            <p class="eyebrow muted"><span class="eyebrow-line"></span> The clock is ticking</p>
+            <h2>Your next trip<br /><span>around the sun.</span></h2>
+          </div>
+          <div class="countdown" aria-label="Countdown to Tshepo's birthday">
+            <div class="time-unit"><strong id="days">00</strong><span>days</span></div>
+            <div class="time-divider">:</div>
+            <div class="time-unit"><strong id="hours">00</strong><span>hours</span></div>
+            <div class="time-divider">:</div>
+            <div class="time-unit"><strong id="minutes">00</strong><span>minutes</span></div>
+            <div class="time-divider">:</div>
+            <div class="time-unit"><strong id="seconds">00</strong><span>seconds</span></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="gallery-section container" id="memories">
+        <div class="gallery-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> The memory archive</p>
+            <h2>Good times.<br /><em>Great company.</em></h2>
+          </div>
+          <p>Replace the three files in <strong>ASSETS/images</strong> with your favourite pictures together.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="photo-card">
+            <div class="photo-placeholder">Add photo-1.jpg</div>
+            <img src="ASSETS/images/photo-1.jpg" alt="A favourite memory of Tshepo" onerror="this.style.display='none'" />
+            <figcaption class="photo-label"><span>MEMORY / 01</span><span>THE DAY ONES</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-placeholder">Add photo-2.jpg</div>
+            <img src="ASSETS/images/photo-2.jpg" alt="A favourite memory with Tshepo" onerror="this.style.display='none'" />
+            <figcaption class="photo-label"><span>MEMORY / 02</span><span>GOOD ENERGY</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-placeholder">Add photo-3.jpg</div>
+            <img src="ASSETS/images/photo-3.jpg" alt="A birthday memory with Tshepo" onerror="this.style.display='none'" />
+            <figcaption class="photo-label"><span>MEMORY / 03</span><span>STILL LOADING</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="letter-section container" id="letter">
+        <div class="letter-card">
+          <div class="letter-topline"><span>FROM SICKZO</span><span>FOR TSHEPO</span></div>
+          <div class="letter-content">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A little something</p>
+            <h2>Keep becoming<br /><em>the man you’re meant to be.</em></h2>
+            <p class="letter-copy">Happy birthday, Tshepo. 24 looks good on you already. Here’s to bigger dreams, louder laughs, quiet wins, and every plot twist that makes this chapter yours. May this year meet you with everything you’ve been working towards.</p>
+            <p class="signature">— Sickzo <span>♥</span></p>
+          </div>
+          <div class="letter-stamp" aria-hidden="true">24<br /><small>YEARS<br />IN THE<br />MAKING</small></div>
+        </div>
+      </section>
+
+      <section class="finale container">
+        <p class="eyebrow centered"><span class="eyebrow-line"></span> Make a wish <span class="eyebrow-line"></span></p>
+        <h2>Here’s to <em>you.</em></h2>
+        <p>More life. More love. More unforgettable moments.</p>
+        <button class="button button-primary" id="wishBtn" type="button">Light it up <span>✦</span></button>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <span>CHAPTER24 / TSHEPO LESHABANE</span>
+      <span>MADE WITH LOVE BY SICKZO</span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">A little birthday magic, coming right up.</div>
+  <script src="JS/script.js"></script>
+</body>
+</html>
