@@ -860,76 +860,180 @@ em {
   line-height: 1.7;
   max-width: 420px;
 }
-
 .cake-wrap {
-  height: 170px;
+  height: 190px;
   position: relative;
   display: grid;
   place-items: end center;
 }
 
+/* Plate */
 .cake-plate {
   position: absolute;
   bottom: 15px;
-  width: 190px;
-  height: 12px;
+  width: 200px;
+  height: 14px;
   border-radius: 50%;
   background: var(--border);
-  box-shadow: 0 7px 0 rgba(49, 92, 255, .18);
+  box-shadow:
+    0 7px 0 rgba(49, 92, 255, .18),
+    0 10px 18px rgba(0, 0, 0, .25);
 }
 
+/* Cake */
 .cake-body {
   position: absolute;
-  bottom: 27px;
-  width: 135px;
-  height: 75px;
+  bottom: 28px;
+  width: 140px;
+  height: 78px;
   border: 2px solid var(--primary-soft);
-  background: #1a285e;
-  border-radius: 8px 8px 14px 14px;
-  box-shadow: inset 0 18px 0 rgba(111, 140, 255, .18);
+  border-radius: 8px 8px 15px 15px;
+  background: linear-gradient(90deg,
+      #172452,
+      #233777,
+      #172452);
+  box-shadow:
+    inset 0 18px 0 rgba(111, 140, 255, .18),
+    0 8px 15px rgba(0, 0, 0, .2);
 }
 
-.cake-body:before {
+/* Frosting */
+.cake-body::before {
   content: '';
   position: absolute;
-  top: -14px;
-  left: -7px;
-  width: 145px;
-  height: 24px;
+  top: -15px;
+  left: -8px;
+  width: 150px;
+  height: 25px;
   border-radius: 50%;
   background: var(--foreground);
-  box-shadow: 0 3px 0 var(--primary-soft);
+  box-shadow: 0 4px 0 var(--primary-soft);
 }
 
+/* Frosting drips */
+.cake-body::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: -4px;
+  left: 16px;
+  width: 11px;
+  height: 22px;
+  border-radius: 0 0 8px 8px;
+  background: var(--foreground);
+  box-shadow:
+    28px 2px 0 var(--foreground),
+    57px -1px 0 var(--foreground),
+    88px 3px 0 var(--foreground);
+}
+
+/* Cake decorations */
 .cake-body span {
   position: relative;
+  z-index: 3;
   display: inline-block;
   width: 10px;
   height: 22px;
-  margin: 12px 9px;
+  margin: 34px 7px 0;
   border-radius: 5px;
   background: var(--primary-soft);
+  transform: rotate(18deg);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .15);
 }
 
+.cake-body span:nth-child(even) {
+  background: var(--primary);
+  transform: rotate(-18deg);
+}
+
+/* Candles */
 .cake-candle {
   position: absolute;
-  bottom: 102px;
-  width: 9px;
-  height: 36px;
-  background: var(--primary);
-  border-radius: 4px;
+  z-index: 5;
+  bottom: 105px;
+  width: 11px;
+  height: 42px;
+  border-radius: 5px 5px 3px 3px;
+  background: repeating-linear-gradient(-45deg,
+      var(--primary) 0 5px,
+      var(--primary-soft) 5px 10px);
+  box-shadow: inset -2px 0 rgba(0, 0, 0, .15);
 }
 
+/* Candle positions */
+.candle-one {
+  left: calc(50% - 49px);
+  transform: rotate(-5deg);
+}
+
+.candle-two {
+  left: calc(50% - 18px);
+  bottom: 111px;
+  transform: rotate(2deg);
+}
+
+.candle-three {
+  left: calc(50% + 13px);
+  bottom: 108px;
+  transform: rotate(-2deg);
+}
+
+.candle-four {
+  left: calc(50% + 43px);
+  transform: rotate(5deg);
+}
+
+/* Flames */
 .cake-flame {
   position: absolute;
-  bottom: 140px;
+  left: 50%;
+  bottom: 37px;
   width: 14px;
-  height: 20px;
+  height: 21px;
   border-radius: 60% 40% 60% 40%;
-  background: var(--primary-soft);
-  box-shadow: 0 0 18px var(--primary);
-  transform: rotate(10deg);
+  background: linear-gradient(180deg,
+      #fff7a8,
+      var(--primary-soft) 60%,
+      var(--primary));
+  box-shadow:
+    0 0 8px var(--primary-soft),
+    0 0 20px var(--primary);
+  transform: translateX(-50%) rotate(10deg);
+  transform-origin: bottom center;
   animation: flicker .8s ease-in-out infinite alternate;
+}
+
+/* Slightly varied flame animations */
+.candle-two .cake-flame {
+  animation-delay: -.2s;
+  transform: translateX(-50%) rotate(-8deg);
+}
+
+.candle-three .cake-flame {
+  animation-delay: -.5s;
+  transform: translateX(-50%) rotate(5deg);
+}
+
+.candle-four .cake-flame {
+  animation-delay: -.35s;
+  transform: translateX(-50%) rotate(-12deg);
+}
+
+@keyframes flicker {
+  0% {
+    opacity: .8;
+    transform: translateX(-50%) scale(.9) rotate(-6deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08) rotate(8deg);
+  }
+
+  100% {
+    opacity: .85;
+    transform: translateX(-50%) scale(.96) rotate(-3deg);
+  }
 }
 
 @keyframes flicker {
