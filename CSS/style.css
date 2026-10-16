@@ -671,22 +671,29 @@ em {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1.15fr .85fr .85fr;
+  grid-template-columns: 1.15fr 1.2fr .98fr;
   gap: 14px;
 }
 
 .photo-card {
-  min-height: 390px;
   position: relative;
+  min-height: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.photo-frame {
+  position: relative;
+  min-height: 390px;
   overflow: hidden;
   border: 1px solid var(--border);
   background: linear-gradient(145deg, #141d3b, #11141c);
 }
 
-.photo-card:nth-child(2),
-.photo-card:nth-child(3) {
+.photo-card:nth-child(2) .photo-frame,
+.photo-card:nth-child(3) .photo-frame {
   min-height: 290px;
-  align-self: end;
 }
 
 .photo-card img {
@@ -702,23 +709,14 @@ em {
   transform: scale(1.05);
 }
 
-.photo-card:after {
+.photo-frame::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(11, 13, 18, .9));
+  background: linear-gradient(180deg,
+      transparent 45%,
+      rgba(11, 13, 18, .9));
   pointer-events: none;
-}
-
-.photo-placeholder {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: rgba(241, 241, 237, .5);
-  font: .66rem 'DM Mono', monospace;
-  letter-spacing: .12em;
-  text-transform: uppercase;
 }
 
 .photo-label {
@@ -733,6 +731,22 @@ em {
   color: var(--foreground);
   font: .63rem 'DM Mono', monospace;
   letter-spacing: .1em;
+}
+
+.photo-label span:last-child {
+  color: var(--primary-soft);
+}
+
+.photo-subtitle {
+  position: static;
+  display: block;
+  margin: 16px 0 0;
+  padding: 0;
+  color: var(--foreground);
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-style: italic;
 }
 
 .photo-label span:last-child {
