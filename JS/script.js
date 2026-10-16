@@ -62,3 +62,58 @@ document.getElementById("wishBtn").addEventListener("click", () => {
 });
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+const audio = document.getElementById("myAudio");
+const soundControl = document.getElementById("soundControl");
+let audioStarted = false;
+
+function setSoundState(isMuted) {
+  soundControl.classList.toggle("is-muted", isMuted);
+  soundControl.setAttribute("aria-pressed", String(isMuted));
+  soundControl.setAttribute(
+    "aria-label",
+    isMuted ? "Play birthday soundtrack" : "Mute birthday soundtrack",
+  );
+}
+
+function playAudio() {
+  if (!audio || audioStarted) return;
+  audio
+    .play()
+    .then(() => {
+      audioStarted = true;
+      setSoundState(false);
+    })
+    .catch(() => {
+      // Browsers may block unmuted autoplay until the visitor interacts.
+      setSoundState(true);
+    });
+}
+
+function toggleAudio() {
+  if (audio.paused) {
+    audio
+      .play()
+      .then(() => {
+        audioStarted = true;
+        setSoundState(false);
+      })
+      .catch(() => setSoundState(true));
+  } else {
+    audio.pause();
+    setSoundState(true);
+  }
+}
+
+soundControl.addEventListener("click", toggleAudio);
+window.addEventListener("load", playAudio);
+["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+  window.addEventListener(
+    eventName,
+    (event) => {
+      if (event.target.closest && event.target.closest("#soundControl")) return;
+      playAudio();
+    },
+    { once: true, passive: true },
+  );
+});
