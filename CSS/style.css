@@ -449,7 +449,9 @@ em {
   font-size: 1rem;
   line-height: 1.8;
 }
-
+.last{
+  color: var(--muted-foreground);
+}
 .signature {
   color: var(--foreground);
   font: italic 1.8rem 'Playfair Display', serif;
